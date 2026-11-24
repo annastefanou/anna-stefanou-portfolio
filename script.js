@@ -87,10 +87,10 @@ function showSavedImage(targetName) {
 function resizeImage(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
-    reader.onerror = () => reject(new Error("Δεν ήταν δυνατή η ανάγνωση της εικόνας."));
+    reader.onerror = () => reject(new Error("The image could not be read."));
     reader.onload = () => {
       const image = new Image();
-      image.onerror = () => reject(new Error("Η εικόνα δεν φορτώθηκε σωστά."));
+      image.onerror = () => reject(new Error("The image could not be loaded."));
       image.onload = () => {
         const scale = Math.min(1, 1400 / Math.max(image.width, image.height));
         const canvas = document.createElement("canvas");
@@ -119,12 +119,12 @@ for (const input of document.querySelectorAll('[type="file"][accept^="image"]'))
     if (!file) return;
     if (!["image/png", "image/jpeg", "image/webp"].includes(file.type)) {
       editStatus.hidden = false;
-      editStatus.textContent = "Επίλεξε PNG, JPG ή WebP εικόνα.";
+      editStatus.textContent = "Choose a PNG, JPG, or WebP image.";
       return;
     }
     if (file.size > 15 * 1024 * 1024) {
       editStatus.hidden = false;
-      editStatus.textContent = "Η εικόνα πρέπει να είναι μικρότερη από 15 MB.";
+      editStatus.textContent = "The image must be smaller than 15 MB.";
       return;
     }
     try {
@@ -134,13 +134,13 @@ for (const input of document.querySelectorAll('[type="file"][accept^="image"]'))
       localStorage.setItem(imagesStorageKey, JSON.stringify(savedImages));
       showSavedImage(targetName);
       editStatus.hidden = false;
-      editStatus.textContent = "Η φωτογραφία προστέθηκε.";
+      editStatus.textContent = "The photo was added.";
       window.setTimeout(() => {
-        if (editStatus.textContent === "Η φωτογραφία προστέθηκε.") editStatus.hidden = true;
+        if (editStatus.textContent === "The photo was added.") editStatus.hidden = true;
       }, 4000);
     } catch (error) {
       editStatus.hidden = false;
-      editStatus.textContent = error.message || "Δεν ήταν δυνατή η προσθήκη της φωτογραφίας.";
+      editStatus.textContent = error.message || "The photo could not be added.";
     }
   });
 }
@@ -162,13 +162,13 @@ function setEditing(isEditing) {
   document.body.classList.toggle("is-editing", isEditing);
   editButton.setAttribute("aria-pressed", String(isEditing));
   editButton.innerHTML = isEditing
-    ? 'Τέλος <span aria-hidden="true">✓</span>'
-    : 'Γράψε <span aria-hidden="true">↗</span>';
+    ? 'Finish <span aria-hidden="true">✓</span>'
+    : 'Write <span aria-hidden="true">↗</span>';
   resetButton.hidden = !isEditing;
   editStatus.hidden = !isEditing;
   editStatus.textContent = storageError
-    ? "Το πρόγραμμα περιήγησης δεν μπορεί να αποθηκεύσει τις αλλαγές."
-    : "Ενεργοποιήθηκε η επεξεργασία — επέλεξε ένα από τα περιγραμμένα κείμενα.";
+    ? "Your browser cannot save these changes."
+    : "Editing is on — select one of the outlined text areas.";
 
   for (const field of editableFields) {
     if (isEditing) {
@@ -201,14 +201,14 @@ for (const field of editableFields) {
     } catch {
       storageError = true;
       editStatus.hidden = false;
-      editStatus.textContent = "Δεν ήταν δυνατή η αποθήκευση των αλλαγών.";
+      editStatus.textContent = "The changes could not be saved.";
     }
     if (field.dataset.editable === "contact-email") updateEmailLink();
   });
 }
 
 resetButton.addEventListener("click", () => {
-  if (!window.confirm("Να επανέλθουν όλα τα κείμενα και οι φωτογραφίες στις αρχικές τιμές;")) return;
+  if (!window.confirm("Reset all text and photos to their original placeholders?")) return;
   try {
     localStorage.removeItem(editsStorageKey);
     localStorage.removeItem(imagesStorageKey);
@@ -226,17 +226,17 @@ document.querySelector("#contact-form").addEventListener("submit", (event) => {
   const email = emailField.textContent.trim();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     editStatus.hidden = false;
-    editStatus.textContent = "Πρόσθεσε πρώτα ένα έγκυρο email επικοινωνίας.";
+    editStatus.textContent = "Add a valid contact email first.";
     return;
   }
-  const subject = encodeURIComponent(`Μήνυμα από ${form.get("name")}`);
-  const body = encodeURIComponent(`Όνομα: ${form.get("name")}\nEmail: ${form.get("email")}\n\n${form.get("message")}`);
+  const subject = encodeURIComponent(`Message from ${form.get("name")}`);
+  const body = encodeURIComponent(`Name: ${form.get("name")}\nEmail: ${form.get("email")}\n\n${form.get("message")}`);
   window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
 });
 
 function setMenuOpen(isOpen) {
   menuButton.setAttribute("aria-expanded", String(isOpen));
-  menuButton.setAttribute("aria-label", isOpen ? "Κλείσιμο μενού" : "Άνοιγμα μενού");
+  menuButton.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
   navigation.classList.toggle("is-open", isOpen);
 }
 

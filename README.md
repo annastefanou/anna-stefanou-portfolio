@@ -1,33 +1,33 @@
-# Portfolio Άννας Στεφάνου
+# Anna Stefanou's Portfolio
 
-Προσωπικό ελληνικό portfolio με θέμα σε καφέ αποχρώσεις. Περιλαμβάνει ενότητες για εμένα, τις σπουδές, τη ζωή στο πανεπιστήμιο, χώρο για φωτογραφίες και τρόπο επικοινωνίας.
+Personal English-language portfolio with a warm brown theme. It includes About Me, Studies, University Life, photo galleries, and a contact form.
 
-## Το άνοιγμα τοπικά
+## Run locally
 
-Άνοιξε το `index.html` απευθείας σε ένα πρόγραμμα περιήγησης ή χρησιμοποίησε έναν απλό server:
+Open `index.html` directly in a browser or use a simple server:
 
 ```sh
 python -m http.server 8000
 ```
 
-Μετά άνοιξε το `http://localhost:8000`.
+Then open `http://localhost:8000`.
 
-## Επεξεργασία περιεχομένου
+## Edit content
 
-- Επίλεξε **Γράψε** στην κορυφή της σελίδας.
-- Επέλεξε ένα από τα περιγραμμένα κείμενα και γράψε το δικό σου.
-- Οι αλλαγές αποθηκεύονται αυτόματα στον browser αυτού του υπολογιστή.
-- Επίλεξε **Τέλος** για να κλείσεις την επεξεργασία ή **Επαναφορά** για να επιστρέψεις στις αρχικές τιμές.
+- Select **Write** at the top of the page.
+- Choose an outlined text block and enter your own content.
+- Changes are saved automatically in this browser.
+- Select **Finish** to stop editing or **Reset** to restore placeholders.
 
-## Προσθήκη φωτογραφιών
+## Add photos
 
-Χρησιμοποίησε τα κουμπιά **Προσθήκη φωτογραφίας** ή **Φωτογραφία 1/2** κάτω από κάθε ενότητα. Υποστηρίζονται PNG, JPG και WebP έως 15 MB.
+Use **Add photo** or **Photo 1/2** below each section. PNG, JPG, and WebP files up to 15 MB are supported.
 
-Οι φωτογραφίες αλλάζουν μέγεθος και αποθηκεύονται τοπικά στον browser. Για μόνιμη έκδοση των φωτογραφιών σε GitHub, αντικατάστησε τα προσωρινά δεδομένα με κανονικά αρχεία εικόνας στον κώδικα.
+Photos are resized and stored locally in the browser. For a permanent GitHub-hosted version, replace temporary browser data with image files in the repository.
 
-## Δημοσίευση με GitHub Pages
+## Publish with GitHub Pages
 
-1. Από το repository στο GitHub άνοιξε **Settings → Pages**.
-2. Στο **Build and deployment**, επίλεξε **Deploy from a branch**.
-3. Επίλεξε το branch που θα στείλεις και τον φάκελο `/ (root)`.
-4. Αποθήκευσε τις επιλογές. Μετά από λίγα λεπτά η σελίδα θα είναι διαθέσιμη στη διεύθυνση που εμφανίζει το GitHub Pages.
+1. Open **Settings → Pages** in the GitHub repository.
+2. Under **Build and deployment**, choose **Deploy from a branch**.
+3. Choose the branch and `/ (root)` folder.
+4. Save. GitHub Pages will provide the public URL after deployment.

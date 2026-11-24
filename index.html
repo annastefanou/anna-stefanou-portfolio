@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="el">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f2ede4">
+    <meta name="description" content="Το προσωπικό portfolio της Άννας Στεφάνου.">
+    <title>Άννα Στεφάνου — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Μετάβαση στο περιεχόμενο</a>
+
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Άννα Στεφάνου, αρχή">Άννα <i>Σ.</i></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Άνοιγμα μενού">
+        <span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-navigation" aria-label="Κύρια πλοήγηση">
+        <a href="#me">Για εμένα</a>
+        <a href="#studies">Οι σπουδές μου</a>
+        <a href="#university">Η ζωή μου</a>
+        <a class="nav-cta" href="#contact">Επικοινωνία <span aria-hidden="true">↗</span></a>
+      </nav>
+      <div class="editor-controls">
+        <button class="edit-toggle" id="edit-toggle" type="button" aria-pressed="false">Γράψε <span aria-hidden="true">↗</span></button>
+        <button class="edit-reset" id="edit-reset" type="button" hidden>Επαναφορά</button>
+      </div>
+    </header>
+    <p class="edit-status" id="edit-status" role="status" aria-live="polite" hidden></p>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Προσωπικό portfolio</p>
+          <h1 id="hero-title">
+            <span data-editable="hero-greeting">Γεια, είμαι η Άννα.</span>
+            <em data-editable="hero-line">Και αυτή είναι η ιστορία μου.</em>
+          </h1>
+          <p class="hero-intro" data-editable="hero-intro">
+            Εδώ θα βρεις λίγα πράγματα για εμένα, για το τι σπουδάζω,
+            για τις εμπειρίες μου και για τη ζωή μου στο πανεπιστήμιο.
+            Χώρος για να το κάνεις δικό σου.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#me">Γνωρίσου με <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href="#contact">Μίλησέ μου <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <div class="hero-photo">
+          <span class="photo-label">ΕΤΟΙΜΑΖΟΜΑΙ ΓΙΑ ΤΟ ΕΠΟΜΕΝΟ ΒΗΜΑ</span>
+          <img id="hero-photo" alt="Η Άννα" hidden>
+          <div class="hero-art" aria-hidden="true">
+            <span class="hero-sun"></span>
+            <span class="hero-ring"></span>
+            <span class="hero-monogram">ΑΣ</span>
+          </div>
+          <span class="hero-year">2026</span>
+          <div class="image-control">
+            <label for="hero-upload">Προσθήκη φωτογραφίας</label>
+            <input id="hero-upload" type="file" accept="image/png,image/jpeg,image/webp">
+            <button type="button" data-remove-image="hero" hidden>Αφαίρεση</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic section-wrap" id="me" aria-labelledby="me-title">
+        <div class="topic-heading">
+          <div class="topic-number">01 <span></span></div>
+          <p data-editable="me-kicker">ΛΙΓΑ ΠΡΑΓΜΑΤΑ ΓΙΑ ΕΜΕΝΑ</p>
+          <h2 id="me-title" data-editable="me-title">Πίσω από το όνομα,<br><em>υπάρχει η καθημερινότητά μου.</em></h2>
+        </div>
+        <div class="topic-grid">
+          <div class="topic-copy">
+            <p class="topic-lead" data-editable="me-lead">Γράψε εδώ ποια είσαι, τι σου αρέσει και τι σε κάνει να φέρεσαι και να κοιτάς τον κόσμο όπως τον κοιτάς.</p>
+            <div class="topic-columns">
+              <p data-editable="me-text-one">[Πείτε λίγο για την προσωπικότητά σας, τα ενδιαφέροντα και τις συνήθειές σας.]</p>
+              <p data-editable="me-text-two">[Τι εκτιμάτε στη ζωή σας; Ποια στιγμή σας ορίζει ή ποια πράγματα σας εμπνέουν;]</p>
+            </div>
+          </div>
+          <div class="topic-details">
+            <p><span>Μένω</span><b data-editable="me-location">[Πόλη]</b></p>
+            <p><span>Μου αρέσει</span><b data-editable="me-likes">[Τα ενδιαφέροντά σου]</b></p>
+          </div>
+        </div>
+        <div class="photo-gallery" aria-label="Φωτογραφίες για εμένα">
+          <figure>
+            <div class="gallery-frame"><img id="me-photo-one" alt="Φωτογραφία για εμένα" hidden><span>Η καθημερινότητά μου</span></div>
+            <figcaption class="image-control"><label for="me-one-upload">Φωτογραφία 1</label><input id="me-one-upload" type="file" accept="image/png,image/jpeg,image/webp"><button type="button" data-remove-image="me-one" hidden>Αφαίρεση</button></figcaption>
+          </figure>
+          <figure>
+            <div class="gallery-frame"><img id="me-photo-two" alt="Μια στιγμή μου" hidden><span>Μια στιγμή μου</span></div>
+            <figcaption class="image-control"><label for="me-two-upload">Φωτογραφία 2</label><input id="me-two-upload" type="file" accept="image/png,image/jpeg,image/webp"><button type="button" data-remove-image="me-two" hidden>Αφαίρεση</button></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="topic studies" id="studies" aria-labelledby="studies-title">
+        <div class="section-wrap">
+          <div class="topic-heading">
+            <div class="topic-number">02 <span></span></div>
+            <p data-editable="studies-kicker">ΤΙ ΣΠΟΥΔΑΖΩ</p>
+            <h2 id="studies-title" data-editable="studies-title">Οι σπουδές μου είναι μέρος<br><em>του τρόπου που σκέφτομαι.</em></h2>
+          </div>
+          <div class="topic-grid">
+            <div class="topic-copy">
+              <p class="topic-lead" data-editable="studies-lead">Γράψε ποιο τμήμα σπουδάζεις, σε ποιο πανεπιστήμιο και ποιο κομμάτι της εργασίας σου σε κινητοποιεί περισσότερο.</p>
+              <div class="topic-columns">
+                <p data-editable="studies-text-one">[Ποια είναι η ειδικότητά σου ή το πεδίο των σπουδών σου;]</p>
+                <p data-editable="studies-text-two">[Τι μαθήματα, εργασίες ή ιδέες σου άρεσαν περισσότερο μέχρι τώρα;]</p>
+              </div>
+            </div>
+            <div class="topic-details">
+              <p><span>Σπουδάζω</span><b data-editable="studies-field">[Τμήμα / Πεδίο]</b></p>
+              <p><span>Πανεπιστήμιο</span><b data-editable="studies-university">[Όνομα πανεπιστημίου]</b></p>
+              <p><span>Έτος</span><b data-editable="studies-year">[Έτος σπουδών]</b></p>
+            </div>
+          </div>
+          <div class="photo-gallery" aria-label="Φωτογραφίες από τις σπουδές">
+            <figure>
+              <div class="gallery-frame dark"><img id="studies-photo-one" alt="Στιγμή από τις σπουδές" hidden><span>Στην τάξη</span></div>
+              <figcaption class="image-control"><label for="studies-one-upload">Φωτογραφία 1</label><input id="studies-one-upload" type="file" accept="image/png,image/jpeg,image/webp"><button type="button" data-remove-image="studies-one" hidden>Αφαίρεση</button></figcaption>
+            </figure>
+            <figure>
+              <div class="gallery-frame dark"><img id="studies-photo-two" alt="Εργασία ή μάθημα" hidden><span>Μια εργασία που με ενέπνευσε</span></div>
+              <figcaption class="image-control"><label for="studies-two-upload">Φωτογραφία 2</label><input id="studies-two-upload" type="file" accept="image/png,image/jpeg,image/webp"><button type="button" data-remove-image="studies-two" hidden>Αφαίρεση</button></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic section-wrap" id="university" aria-labelledby="university-title">
+        <div class="topic-heading">
+          <div class="topic-number">03 <span></span></div>
+          <p data-editable="university-kicker">Η ΖΩΗ ΜΟΥ ΣΤΟ ΠΑΝΕΠΙΣΤΗΜΙΟ</p>
+          <h2 id="university-title" data-editable="university-title">Μέσα από τις καθημερινές στιγμές,<br><em>χτίζεται κάτι δικό μου.</em></h2>
+        </div>
+        <div class="topic-grid">
+          <div class="topic-copy">
+            <p class="topic-lead" data-editable="university-lead">Περιέγραψε τη καθημερινότητά σου: οι φίλοι, η πόλη, οι δραστηριότητες, τα ταξίδια, οι στιγμές πίεσης και όλα όσα έγιναν μέρος της εμπειρίας σου.</p>
+            <div class="topic-columns">
+              <p data-editable="university-text-one">[Πώς είναι μια συνηθισμένη μέρα σου στο πανεπιστήμιο;]</p>
+              <p data-editable="university-text-two">[Τι σε έχει σημαδέψει μέχρι τώρα; Ένας άνθρωπος, ένας σύλλογος, ένα μέρος ή μια ευκαιρία;]</p>
+            </div>
+          </div>
+          <blockquote data-editable="university-quote">“Η πανεπιστημιακή ζωή είναι εκεί όπου μαθαίνω ποιος θέλω να είμαι.”</blockquote>
+        </div>
+        <div class="photo-gallery" aria-label="Φωτογραφίες από τη ζωή στο πανεπιστήμιο">
+          <figure>
+            <div class="gallery-frame"><img id="university-photo-one" alt="Ζωή στο πανεπιστήμιο" hidden><span>Με τους φίλους</span></div>
+            <figcaption class="image-control"><label for="university-one-upload">Φωτογραφία 1</label><input id="university-one-upload" type="file" accept="image/png,image/jpeg,image/webp"><button type="button" data-remove-image="university-one" hidden>Αφαίρεση</button></figcaption>
+          </figure>
+          <figure>
+            <div class="gallery-frame"><img id="university-photo-two" alt="Μια πανεπιστημιακή στιγμή" hidden><span>Ένα αγαπημένο μέρος</span></div>
+            <figcaption class="image-control"><label for="university-two-upload">Φωτογραφία 2</label><input id="university-two-upload" type="file" accept="image/png,image/jpeg,image/webp"><button type="button" data-remove-image="university-two" hidden>Αφαίρεση</button></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact-inner section-wrap">
+          <p class="eyebrow"><span></span> Επικοινωνία</p>
+          <h2 id="contact-title" data-editable="contact-title">Θέλεις να γνωριστούμε;<br><em>Ας πούμε ένα γεια.</em></h2>
+          <p data-editable="contact-copy">Γράψε μου για συνεργασία, ένα project, μια ερώτηση ή απλώς για να πούμε καλημέρα.</p>
+          <form class="contact-form" id="contact-form">
+            <div class="form-row">
+              <label>Το όνομά σου<input name="name" type="text" placeholder="[Το όνομά σου]" required></label>
+              <label>Το email σου<input name="email" type="email" placeholder="[Το email σου]" required></label>
+            </div>
+            <label>Το μήνυμά σου<textarea name="message" rows="4" placeholder="Γράψε μου τι έχεις στο μυαλό σου..." required></textarea></label>
+            <button type="submit">Αποστολή μηνύματος <span aria-hidden="true">↗</span></button>
+          </form>
+          <p class="direct-contact">Ή γράψε απευθείας στο <a class="contact-email" href="mailto:anna@example.com" data-editable="contact-email">anna@example.com</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-wrap">
+      <a class="wordmark" href="#top" aria-label="Επιστροφή στην αρχή">Άννα <i>Σ.</i></a>
+      <p>Personal portfolio · <span data-editable="footer-year">2026</span></p>
+      <a href="#top">ΕΠΑΝΩ <span aria-hidden="true">↑</span></a>
+    </footer>
+  </body>
+</html>
